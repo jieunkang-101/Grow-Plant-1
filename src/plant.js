@@ -9,9 +9,8 @@ export const storeState = (initialState) => {
 
 export const changeState = (prop) => {
   return (value) => {
-    return (name) => {
       return (state) => ({
-        name, ...state, 
+        ...state, 
         [prop] : (state[prop] || 0) + value
       })
     }
@@ -40,10 +39,6 @@ export const cloudyDay = changeState("sunlight")(3);
 export const rainyDay = changeState("sunlight")(0);
 export const enoughWater = changeState("water")(5);
 
-const feed = changeState("soil");
-const theStormHurtsMe = feed(-5);
-fernAffectedByTheStorm = fern(theStormHurtsMe);
-// fernAffectedByTheStorm = {soil: -5, water: 0, light: 0});
 
 
 
@@ -69,12 +64,17 @@ fernAffectedByTheStorm = fern(theStormHurtsMe);
 //   }
 // }
 
-// const initialValue = {soil: 0, water: 0, light: 0};
-// const fern = storeState(initialValue);
-// const sunFlower = storeState(initialValue);
-// const fernState = fern(blueFood);
-// const fernState = fern(sunnyDay);
-// const sunFlowerState = sunFlower(blueFood);
+const initialValue = {soil: 0, water: 0, light: 0};
+const fern = storeState(initialValue);
+const sunFlower = storeState(initialValue);
+const fernState = fern(blueFood);
+const fernState = fern(sunnyDay);
+const sunFlowerState = sunFlower(blueFood);
+
+const feed = changeState("soil");
+const theStormHurtsMe = feed(-5);
+fernAffectedByTheStorm = fern(theStormHurtsMe);
+// fernAffectedByTheStorm = {soil: -5, water: 0, light: 0});
 
 const gameValues = { 
   plant: {
