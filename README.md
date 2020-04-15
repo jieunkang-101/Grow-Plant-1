@@ -1,4 +1,4 @@
-# [GrowPlant](https://github.com/jiwon-seattle/Grow-Plant.git)
+# [GrowPlant](https://github.com/jieunkang-101/GrowPlant_FP.git)
 
 #### Functional programming exercise at [Epicodus](https://www.epicodus.com/), 04.14.2020
 
