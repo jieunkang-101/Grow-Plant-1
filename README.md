@@ -5,12 +5,12 @@
 #### By **Jieun Kang and Jiwon Han**
 
 [![Project Status: WIP – Initial development is in progress, but there has not yet been a stable, usable release suitable for the public.](https://www.repostatus.org/badges/latest/wip.svg)](https://www.repostatus.org/#wip)
-![LastCommit](https://img.shields.io/github/last-commit/jiwon-seattle/Grow-Plant)
-![Languages](https://img.shields.io/github/languages/top/jiwon-seattle/Grow-Plant)
+![LastCommit](https://img.shields.io/github/last-commit/jieunkang101/GrowPlant_FP)
+![Languages](https://img.shields.io/github/languages/top/jieunkang101/GrowPlant_FP)
 [![MIT license](https://img.shields.io/badge/License-MIT-orange.svg)](https://lbesson.mit-license.org/)
 
 #### 4/14/20 Work at Home Summary
-- Grow Plant application & Recursive Function practic
+- Grow Plant application & Recursive Function practice
 - Struggles:
   - divide function for different plants
   - divide button effects for different plants
