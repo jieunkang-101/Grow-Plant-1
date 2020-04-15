@@ -15,7 +15,7 @@ export const changeState = (prop) => {
       })
     }
   }
-}
+
 
 // export const changeState = (prop) => {
 //   return (value) => {
@@ -83,7 +83,7 @@ const gameValues = {
     light: 0
   }, game: {
      numberOfPlatsAlive:0, 
-     numberOfPlantDead; 0, 
+     numberOfPlantDead: 0, 
      playerName: ""
   }, weather: {
      wind: 2, 
@@ -96,8 +96,8 @@ const gameValues = {
 
 const SuperGameMaster = storeState(gameValues);                    
 
-const initialCameStateValues = { numberOfPlatsAlive:0, numberOfPlantDead; 0, playerName: "" };
-const gameMaster = storeState(initialGameValue);
+const initialGameStateValues = { numberOfPlatsAlive:0, numberOfPlantDead; 0, playerName: "" };
+const gameMaster = storeState(initialGameStateValues);
 
 const newPlayer = changeState("playerName");
 // const newPlant = changeState("numberOfPlants")(1);
