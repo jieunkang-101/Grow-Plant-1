@@ -55,7 +55,7 @@ return (value1, value2, value3) => {
   }
 }
 const updateAllProps = changeThreeStateProps("soil", "water", "light");
-const theStormHere = updateAllProps(-7)(-3)(-15);
+const theStormHere = updateAllProps(-7, -3, -15);
 const fernIsHurtByTheStorm = fern(theStormIsHere);
 // fernIsHurtByTheStorm =  {soil: -7, water: -3, light: -15}
 
