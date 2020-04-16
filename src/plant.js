@@ -16,20 +16,60 @@ export const changeState = (prop) => {
     }
   }
 
+const changeStringState = (prop) => {
+  return (value) => {
+      return (state) => ({
+        ...state, 
+        [prop] : value
+      })
+    }
+  }
 
-// export const changeState = (prop) => {
-//   return (value) => {
-//     return (name) => {
-//       return (state) => {
-//         return {
-//         name, ...state, 
-//         [prop] : (state[prop] || 0) + value
-//         }
-//       }
-//     }
-//   }
-// }
+const changeTwoStateProps = (prop) => {
+  return (prop2) => {
+    return (value) => {
+      return (value2) => {
+        return (state) => ({
+          ...state, 
+          [prop] : (state[prop] || 0) + value,
+          [prop2] : (state[prop2] || 0) + value2
+        })
+      }
+    }
+   } 
+ }
 
+const updateLightAndWater = changeTwoStateProps("light")("water");
+const waterPlantOnSunnyDay = updateLightAndWater(10)(15);
+const fernIsHappy = fern(waterPlantOnSunnyDay);
+// fernIsHappy = {soil: 0, water: 15, light: 10}
+
+const changeThreeStateProps = (prop1, prop2, prop3) => {
+return (value1, value2, value3) => {
+    return (state) => ({
+      ...state, 
+      [prop1] : (state[prop1] || 0) + value1,
+      [prop2] : (state[prop2] || 0) + value2,
+      [prop3] : (state[prop3] || 0) + value3
+    })
+  }
+}
+
+//prop2 = "water"
+state.prop2
+// looking for a property called "prop2"
+stat[prop2]
+// looking for a property called "water"
+state["water"]
+state.water
+// dancer.hip hop skill doesn't work, but dancer["hip hop skill"] does
+// the bracket notation takes a string as the variable
+
+
+const updateAllProps = changeThreeStateProps("soil", "water", "light");
+const theStormHere = updateAllProps(-7)(-3)(-15);
+const fernIsHurtByTheStorm = fern(theStormIsHere);
+// fernIsHurtByTheStorm =  {soil: -7, water: -3, light: -15}
 
 export const lily = storeState();
 export const rose = storeState();
