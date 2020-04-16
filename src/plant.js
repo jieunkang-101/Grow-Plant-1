@@ -54,6 +54,10 @@ return (value1, value2, value3) => {
     })
   }
 }
+const updateAllProps = changeThreeStateProps("soil", "water", "light");
+const theStormHere = updateAllProps(-7)(-3)(-15);
+const fernIsHurtByTheStorm = fern(theStormIsHere);
+// fernIsHurtByTheStorm =  {soil: -7, water: -3, light: -15}
 
 //prop2 = "water"
 state.prop2
@@ -65,11 +69,21 @@ state.water
 // dancer.hip hop skill doesn't work, but dancer["hip hop skill"] does
 // the bracket notation takes a string as the variable
 
+const changeAnyStatePropOrProps = { newStateObj } => {
+  return (currentState) => ({
+    ...currentState,
+    ...newStateObj
+  })
+}  
 
-const updateAllProps = changeThreeStateProps("soil", "water", "light");
-const theStormHere = updateAllProps(-7)(-3)(-15);
-const fernIsHurtByTheStorm = fern(theStormIsHere);
-// fernIsHurtByTheStorm =  {soil: -7, water: -3, light: -15}
+// currentState = { soil: 0, water: 0, light: 0, name: "ferny" };
+// newState = { happiness: 3 };
+// { soil: 0, water: 0, light: 0, name: "ferny", happiness: 3 }
+const newState = { soil: 3 }; || {soil: 3, water: 2, light: 5};
+const tendToPlant = changeAnyStatePropOrProps(newState);
+const fernTendedTo = fern(tendToPlant);
+console.log("set soil to 3", fernTendedTo);
+
 
 export const lily = storeState();
 export const rose = storeState();
